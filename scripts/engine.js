@@ -54,7 +54,7 @@ function compararCartas() {
     cartasViradas = [];
 
     if (document.querySelectorAll(".cartaCerta").length === emojis.length) {
-        alert(`PARABÉNS! VOÇÊ CONSEGUIU EM ${jogadas} JOGADAS!`);
+        alert(`PARABÉNS! VOCÊ CONSEGUIU EM ${jogadas} JOGADAS!`);
     }
 }
 
