@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: darkgreen;
+    user-select: none;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(325deg,
+            #000000 0%,
+            darkblue 30%,
+            blue 60%,
+            lightblue 90%,
+            white 100%);
+    padding: 40px 60px;
+}
+
+h2 {
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.reset {
+    padding: 15px 20px;
+    width: 100%;
+    color: #000000;
+    background-color: white;
+    border: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.reset:hover {
+    background-color: lightblue;
+}
+
+.reset:focus {
+    background-color: yellow;
+}
+
+.game {
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bbdbff;
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(135, 135, 135);
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.cartaVirada {
+    transform: rotateY(0deg);
+}
+
+.cartaVirada::after {
+    transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 600px){
+    h2 {
+        font-size: 2em;
+
+    }
+    .game {
+        width: 330px;
+        height: auto;
+    }
+
+    .item {
+        width: 75px;
+        height: 75px;
+    }
+    
+}
+
+@media screen and (max-width: 480px){
+    
+}
